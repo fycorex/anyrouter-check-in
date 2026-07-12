@@ -70,6 +70,7 @@ jobs:
           balance-hash-
 
     - name: 执行签到
+      continue-on-error: ${{ github.event_name == 'schedule' }}
       env:
         ANYROUTER_ACCOUNTS: ${{ secrets.ANYROUTER_ACCOUNTS }}
         PROVIDERS: ${{ secrets.PROVIDERS }}
